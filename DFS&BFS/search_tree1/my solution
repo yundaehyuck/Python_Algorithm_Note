@@ -1,0 +1,44 @@
+def solution(begin, target, words):
+    
+    from copy import deepcopy
+    from collections import deque
+    
+    
+    if not(target in words):
+        
+        return 0
+    
+    else:
+        
+        tf_list = deque([[begin,words,0]])
+        
+        while 1:
+            
+            b,word_list,step = tf_list.popleft()
+            
+            for word in word_list:
+                
+                count = 0
+                
+                for x,y in zip(b,word):
+                    
+                    if x != y:
+                        
+                        count += 1
+                    
+                    if count >= 2:
+                        break
+                
+                if count == 1:
+                    
+                    if word == target:
+                    
+                        return step+1
+                    
+                    else:
+                    
+                        copy_word = deepcopy(word_list)
+
+                        copy_word.remove(word)
+
+                        tf_list.append([word,copy_word,step+1])
