@@ -22,7 +22,7 @@ def query_sum(tree,lazy,tree_index,start,end,left,right):
     
     mid = (start+end)//2
     
-    left_sum = query_sum(tree,2*tree_index,start,mid,left,right)
-    right_sum = query_sum(tree,2*tree_index+1,mid+1,end,left,right)
+    left_sum = query_sum(tree,lazy,2*tree_index,start,mid,left,right)
+    right_sum = query_sum(tree,lazy,2*tree_index+1,mid+1,end,left,right)
     
     return left_sum + right_sum
