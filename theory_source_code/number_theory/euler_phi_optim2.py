@@ -44,7 +44,6 @@ def phi(n):
     #반복문 밖에서 n이 1보다 크다면, n은 그 자체로 소수이다.
     if n > 1:
         
-        #소수의 오일러 phi값
-        result = n - 1
+        result -= result//n
     
     return result

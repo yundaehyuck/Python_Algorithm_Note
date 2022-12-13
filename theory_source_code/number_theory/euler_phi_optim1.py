@@ -34,6 +34,6 @@ def phi(n):
     
     if n > 1:
         
-        result = n - 1 #오일러 phi의 정의에 따라..
+        result = result * (1.0 - (1.0/float(n)))
     
-    return int(result)
+    return int(result) #result는 float이므로... int()로 바꿔서
