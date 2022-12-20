@@ -14,11 +14,11 @@ def geometric(r,n,mod):
         
         if n % 2 == 1:
             
-            return ((1+r)%mod*geometric(r*r%mod, (n-1)//2))%mod
+            return ((1+r)%mod*geometric(r*r%mod, (n-1)//2, mod))%mod
         
         #n이 짝수
         #g(r,n) = 1+(r+r**2)g(r**2,(n-2)/2)
         
         else:
             
-            return 1 + ((r+r*r)%mod*geometric(r*r%mod, (n-2)//2))%mod
+            return 1 + ((r+r*r)%mod*geometric(r*r%mod, (n-2)//2, mod))%mod
