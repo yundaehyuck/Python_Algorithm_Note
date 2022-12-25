@@ -29,7 +29,7 @@ def update_range(tree,lazy,tree_index,start,end,left,right,value):
             lazy[2*tree_index] += value
             lazy[2*tree_index+1] += value
             
-            return #더 이상 아래로 내려가지 않는다.
+        return #더 이상 아래로 내려가지 않는다.
    
     
     #<파란색>부분
