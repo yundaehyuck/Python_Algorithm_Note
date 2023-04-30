@@ -40,7 +40,7 @@ for i in range(n):
         A[i] += 1
     
     #i+A[i]중 최대가 되도록, r,p를 갱신
-
+    #r은 지금까지 구한 i+A[i]중 최댓값, p는 그 때의 i
     if i+A[i] > r:
         
         r,p = i+A[i],i
