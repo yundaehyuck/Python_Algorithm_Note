@@ -29,8 +29,8 @@ def find_parent(parent,x):
 def union_parent(parent,a,b):
     
     ##a,b의 대표자를 찾고
-    a = find_parent(parent,a)
-    b = find_parent(parent,b)
+    #a = find_parent(parent,a)
+    #b = find_parent(parent,b) ##edge 선택에서 미리 a,b의 대표자를 찾아온다
     
     ##rank가 낮은 부모를 높은 노드 번호로
     if rank[a] > rank[b]:
@@ -109,7 +109,10 @@ for edge in edges:
     ##즉 사이클이 발생하지 않는다면..
     ##즉 find_parent()값이 서로 다르다면..
 
-    if find_parent(parent,a) != find_parent(parent,b): ##동일한 집합에 속하지 않는 경우
+    a = find_parent(parent,a)
+    b = find_parent(parent,b)
+
+    if a != b: ##동일한 집합에 속하지 않는 경우
         
         union_parent(parent,a,b) ##union 수행
         result += cost ##union을 수행한 간선의 가중치를 더해준다
