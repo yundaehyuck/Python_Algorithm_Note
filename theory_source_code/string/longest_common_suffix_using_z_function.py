@@ -34,3 +34,50 @@ def z_function(s):
             right = i
     
     return z
+
+
+"""
+#혹은 문자열 s를 역으로 배열하고, 원래 z-function을 적용한 다음
+#z[-i]가 s와 s[1,2,..,i]의 가장 긴 공통 접미사의 길이가 된다.
+from sys import stdin
+
+def z_function(s):
+    
+    n = len(s)
+
+    z = [0]*n
+
+    z[0] = n
+
+    left = 0
+    right = 0
+
+    for i in range(1,n):
+        
+        if i < right:
+            
+            z[i] = min(right - i, z[i-left])
+        
+        while i + z[i] < n and s[z[i]] == s[i+z[i]]:
+            
+            z[i] += 1
+        
+        if i+z[i] > right:
+            
+            left = i
+            right = i+z[i]
+    
+    return z
+
+s = stdin.readline().rstrip()[::-1]
+
+z = z_function(s)
+
+m = int(stdin.readline())
+
+for _ in range(m):
+    
+    i = int(stdin.readline())
+
+    print(z[-i])
+"""
