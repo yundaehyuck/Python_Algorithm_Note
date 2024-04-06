@@ -1,4 +1,5 @@
 #boj 14609
+#이 방법은 일부 문제에서 안될 수 있다
 from sys import stdin
 
 def binary_search(a,b,n,real,k,c):
