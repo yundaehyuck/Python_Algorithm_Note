@@ -47,6 +47,28 @@ def dfs(v,d):
 #루트노드는 1번이고, 깊이는 0으로 dfs 시작
 dfs(1,0)
 
+"""
+#bfs도 가능한데 재귀가 없어서 시간이 빨라질 수 있다
+def bfs(v,d):
+    
+    queue = deque([(v,d)])
+    
+    while queue:
+        
+        v,d = queue.popleft()
+        
+        for u in tree[v]:
+            
+            if visited[u] == 0:
+                
+                depth[u] = d+1
+                visited[u] = 1
+                parent[u] = v
+                queue.append((u,d+1))
+ 
+bfs(1,0)
+"""
+
 #u,v의 최소 공통 조상 찾기
 def lca(u,v):
     
