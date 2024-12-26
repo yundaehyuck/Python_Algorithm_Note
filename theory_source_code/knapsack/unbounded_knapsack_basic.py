@@ -24,7 +24,7 @@ dp2[0] = 0
     
 for i in range(1,n+1):
     
-    for j in range(dp[i],N+1):
+    for j in range(dp[i],N+1): #핵심은 가방의 무게는 정방향 j = 1,2,3,...,N으로 순회해야함
         
         dp2[j] = min(dp2[j], dp2[j-dp[i]] + 1)
 
