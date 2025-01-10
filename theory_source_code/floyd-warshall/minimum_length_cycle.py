@@ -15,9 +15,9 @@ for _ in range(e):
     a,b,c = map(int,stdin.readline().split())
     dp[a][b] = c
 
-for i in range(1,v+1):
+for k in range(1,v+1):
     
-    for k in range(1,v+1):
+    for i in range(1,v+1):
         
         for j in range(1,v+1):
             
